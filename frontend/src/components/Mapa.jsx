@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { getLocations, addLocation } from "../api/api";
+import "../styles/mapa.css";
 
 // Definir un icono personalizado
 const customIcon = L.icon({
@@ -18,38 +19,41 @@ const Mapa = () => {
   const [locations, setLocations] = useState([]);
   const mapRef = useRef(null);
 
+  // Cargar el mapa y las ubicaciones
   useEffect(() => {
     if (!mapRef.current) {
-      mapRef.current = L.map("map").setView([0, 0], 2);
+      mapRef.current = L.map("map").setView([0, 0], 2); // Coordenadas iniciales y zoom
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "&copy; OpenStreetMap contributors",
       }).addTo(mapRef.current);
     }
 
     const loadLocations = async () => {
-      const data = await getLocations();
+      const data = await getLocations(); // Cargar las ubicaciones
       setLocations(data);
     };
 
     loadLocations();
   }, []);
 
+  // Mostrar las ubicaciones en el mapa
   useEffect(() => {
     if (mapRef.current) {
       mapRef.current.eachLayer((layer) => {
         if (layer instanceof L.Marker) {
-          mapRef.current.removeLayer(layer);
+          mapRef.current.removeLayer(layer); // Eliminar capas previas
         }
       });
 
       locations.forEach(({ lat, lng, description }) => {
-        L.marker([lat, lng], { icon: customIcon }) // Usa el icono personalizado
+        L.marker([lat, lng], { icon: customIcon }) // Usar el icono personalizado
           .addTo(mapRef.current)
           .bindPopup(description);
       });
     }
   }, [locations]);
 
+  // Manejar la sumisión del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -72,16 +76,19 @@ const Mapa = () => {
       setLongitude("");
 
       const newLocations = await getLocations();
-      setLocations(newLocations);
+      setLocations(newLocations); // Recargar ubicaciones
     } else {
       alert("Hubo un error al agregar la ubicación.");
     }
   };
 
   return (
-    <div>
-      <div id="map" style={{ width: "100%", height: "500px" }}></div>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      {/* Mapa */}
+      <div id="map" className="mapa-container"></div>
+
+      {/* Formulario */}
+      <form onSubmit={handleSubmit} className="formulario">
         <h3>Agregar Nueva Ubicación</h3>
         <label>Descripción:</label>
         <input

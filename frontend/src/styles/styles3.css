@@ -8,7 +8,7 @@ body {
   /* Fondo para la página de Reciclables */
   .reciclables-container {
     position: relative;
-    background-image: url('/media/images/fondo-reciclaje.jpg'); /* Cambia el fondo con una imagen relacionada al reciclaje */
+    background-image: url('/media/images/naturals.jpg'); /* Cambia el fondo con una imagen relacionada al reciclaje */
     background-size: cover;
     background-position: center;
     min-height: 100vh;

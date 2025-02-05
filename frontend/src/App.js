@@ -1,3 +1,4 @@
+import FormReciclable from "./components/FormReciclable";
 import Inicio from "./components/Inicio";
 import Mapa from "./components/Mapa";
 import Reciclables from "./components/Reciclables";
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/mapa" element={<Mapa />} />
         <Route path="/reciclables" element={<Reciclables/>} />
+        <Route path="/reciclables/Agregar-papel" element={<FormReciclable/>} />
       </Routes>
     </Router>
   );

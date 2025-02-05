@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const serverRoutes = require('./routes/serverRoutes');
 let app = express();
 let port = 3000;
+const reciclablesRoutes = require("./routes/reciclables");
+
+
 
 async function connectDB(){
     try{
@@ -22,6 +25,8 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use('/reciclaje', serverRoutes);
+app.use("/api/reciclables", reciclablesRoutes);
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

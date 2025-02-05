@@ -1,10 +1,9 @@
-import { useState } from "react";
-import axios from "axios";
-
 const FormularioUbicacion = ({ actualizarMapa }) => {
   const [descripcion, setDescripcion] = useState("");
   const [latitud, setLatitud] = useState("");
   const [longitud, setLongitud] = useState("");
+
+  console.log("Formulario renderizado"); // Verifica que el componente se está renderizando
 
   const handleSubmit = async (e) => {
     e.preventDefault();
