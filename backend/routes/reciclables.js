@@ -1,21 +1,27 @@
 // routes/reciclables.js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-// Arreglo en memoria para almacenar reciclables
-let reciclables = [];
+let reciclables = [];  // Aquí estarían los datos en memoria (idealmente usarías una base de datos)
 
-// Ruta POST para agregar un reciclable
-router.post('/agregar', (req, res) => {
-  const reciclable = req.body;
-  reciclables.push(reciclable);
-  console.log("Reciclable agregado:", reciclable);
-  res.status(201).json({ message: "Reciclable agregado exitosamente", reciclable });
+// Crear un nuevo reciclable
+router.post("/", (req, res) => {
+  const { description, quantity, type } = req.body;
+  const newReciclable = { id: Date.now(), description, quantity, type };
+  reciclables.push(newReciclable);
+  res.status(201).json(newReciclable);
 });
 
-// Ruta GET para obtener todos los reciclables
-router.get('/', (req, res) => {
-  res.status(200).json(reciclables);
+// Leer los reciclables
+router.get("/", (req, res) => {
+  res.json(reciclables);
+});
+
+// Eliminar reciclable
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  reciclables = reciclables.filter(item => item.id !== parseInt(id));
+  res.status(204).end();
 });
 
 module.exports = router;

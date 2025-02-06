@@ -1,0 +1,38 @@
+/* Estilos para el listado de reciclables */
+.reciclables-list-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+  }
+  
+  .reciclables-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .reciclable-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+  }
+  
+  .reciclable-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .reciclable-card p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .reciclable-card p strong {
+    font-weight: bold;
+  }
+  

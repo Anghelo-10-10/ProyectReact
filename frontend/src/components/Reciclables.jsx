@@ -25,7 +25,7 @@ const Reciclables = () => {
           <ul>
             <li><Link to="/">Inicio</Link></li>
             <li><Link to="/mapa">Mapa</Link></li>
-            <li><Link to="#">Visión</Link></li>
+            <li><Link to="/ver/reciclados">Ver Reciclados</Link></li>
             <li><Link to="#">Misión</Link></li>
           </ul>
         </nav>
@@ -40,7 +40,7 @@ const Reciclables = () => {
               <h5 className="card-title">Plástico</h5>
               <p className="card-text">Recicla botellas y todo tipo de plastico.</p>
               <Link to="/detalles-plastico" className="card-button">Más Información</Link>
-              <Link to="/reciclables/Agregar-papel" className="card-button secondary">Agregar Reciclaje</Link>
+              <Link to="/agregar/plastico" className="card-button secondary">Agregar Reciclaje</Link>
             </div>
           </div>
           <div className="card">
@@ -49,7 +49,7 @@ const Reciclables = () => {
               <h5 className="card-title">Papel</h5>
               <p className="card-text">Recicla periódicos, revistas y más.</p>
               <Link to="/detalles-papel" className="card-button">Más Información</Link>
-              <Link to="/reciclables/Agregar-papel" className="card-button secondary">Agregar Reciclaje</Link>
+              <Link to="/agregar/papel" className="card-button secondary">Agregar Reciclaje</Link>
             </div>
           </div>
           <div className="card">
@@ -58,7 +58,7 @@ const Reciclables = () => {
               <h5 className="card-title">Vidrio</h5>
               <p className="card-text">Recicla botellas y frascos de vidrio.</p>
               <Link to="/detalles-vidrio" className="card-button">Más Información</Link>
-              <Link to="/reciclables/Agregar-papel" className="card-button secondary">Agregar Reciclaje</Link>
+              <Link to="/agregar/vidrio" className="card-button secondary">Agregar Reciclaje</Link>
             </div>
           </div>
           <div className="card">
@@ -67,7 +67,7 @@ const Reciclables = () => {
               <h5 className="card-title">Metales</h5>
               <p className="card-text">Recicla hierro, aluminio, etc.</p>
               <Link to="/detalles-metales" className="card-button">Más Información</Link>
-              <Link to="/reciclables/Agregar-papel" className="card-button secondary">Agregar Reciclaje</Link>
+              <Link to="/agregar/metal" className="card-button secondary">Agregar Reciclaje</Link>
             </div>
           </div>
         </div>

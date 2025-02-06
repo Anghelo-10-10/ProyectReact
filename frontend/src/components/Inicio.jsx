@@ -20,7 +20,7 @@ const Inicio = () => {
             <li><Link to="/">Inicio</Link></li>
             <li><Link to="/mapa">Mapa</Link></li>
             <li><Link to="#">Visión</Link></li>
-            <li><Link to="#">Misión</Link></li>
+            <li><Link to="#">Inicia Sesión</Link></li>
           </ul>
         </nav>
       </div>

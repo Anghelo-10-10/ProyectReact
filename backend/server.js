@@ -26,6 +26,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/reciclaje', serverRoutes);
 app.use("/api/reciclables", reciclablesRoutes);
+app.use("/api/reciclables", require("./routes/reciclables"));
 
 
 app.use(bodyParser.json());
@@ -34,7 +35,7 @@ app.use(express.static('http://localhost:3000/mapa.html')); // Servir archivos e
 
 
 app.listen(port, ()=>{
-    console.log("The server is running at http://localhost:3000/reciclaje");
+    console.log("The server is running at http://localhost:3001/reciclaje");
 })
 
 
